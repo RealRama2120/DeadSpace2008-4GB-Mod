@@ -1,0 +1,10 @@
+Version 1.1.2
+
+- Added Steam compatibility for Dead Space (2008) Steam build 252137 / App ID 17470.
+- Fixes the reproduced Steam Application load error 3:0000065432 while preserving the normal 4GB behavior on EA App.
+- Steam support is limited to the verified game executable and mod backup/manifest described in the README.
+- Existing patch, restore, elevation, and DirectSound forwarding behavior is unchanged.
+- Tested through Steam and EA App; a short Steam gameplay check passed.
+- Added the required MinHook license and third-party notice for the process-local Steam compatibility hooks.
+
+The previous 1.1.1 file remains available as a rollback option.

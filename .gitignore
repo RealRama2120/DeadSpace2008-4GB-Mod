@@ -1,0 +1,11 @@
+/build/
+*.log
+*.dmp
+*.sav
+*.bak
+*.pfx
+*.pem
+*.key
+Dead Space.exe
+*.deadspace-laa.bak
+*.deadspace-laa.manifest.json

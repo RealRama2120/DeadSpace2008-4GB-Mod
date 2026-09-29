@@ -1,0 +1,70 @@
+[b]Dead Space (2008) - 4GB Mod[/b]
+
+Automatically enables the standard Large Address Aware flag so the 32-bit game
+can use up to 4 GB of virtual address space on 64-bit Windows.
+
+[b]Install[/b]
+
+[list=1]
+[*]Install, enable, and deploy the Main File with Vortex.
+[*]Launch Dead Space normally from EA, Steam, Vortex, or your usual shortcut.
+[/list]
+
+That is it. There is no separate patcher to run. The first launch briefly closes
+and reopens once; later launches are direct. If the executable was already LAA,
+the mod leaves it alone and no restart occurs.
+
+For manual installation, extract the archive beside [b]Dead Space.exe[/b] and
+launch the game normally.
+
+[b]Standalone mod[/b]
+
+Manual installation works without Vortex. Vortex users keep their existing Dead
+Space game support; this mod needs no extension update or special Vortex tool
+and does not modify an extension. It does not contain NTCore's 4gb_patch.exe or
+a modified game executable.
+
+[b]Safety and undo[/b]
+
+The mod validates the PE32/i386 format, pins the exact target file, creates and
+verifies a SHA-256 backup, changes only the byte containing the standard LAA
+bit, flushes it, and verifies success. Failures before the write leave the file
+unchanged. If a write fails, the mod attempts and verifies a rollback through
+the same pinned handle. If the final state cannot be proven safe, it does not
+restart the game; use Restore or EA/Steam Repair/Verify before trying again.
+
+To undo the patch, run [b]Restore Dead Space 4GB Mod.cmd[/b] while the mod is
+still installed, then remove the mod. EA App Repair or Steam Verify can also
+restore the original executable.
+
+Do not configure Dead Space, EA, Steam, or their shortcuts to always run as
+administrator. First-time patching intentionally refuses an already-elevated
+game. Launch normally and approve only the mod's narrow one-time Windows prompt
+if the game folder needs it.
+
+If the executable was already LAA before this mod first ran, this mod creates no
+backup or manifest for that earlier change. Use Repair/Verify to restore the
+store executable.
+
+[b]Compatibility[/b]
+
+This mod uses [b]dsound.dll[/b]. It conflicts with any other local dsound.dll
+unless proxy chaining is deliberately arranged.
+
+[b]Antivirus transparency[/b]
+
+The DLL is unsigned native code designed to modify the LAA flag and relaunch the
+game, so heuristic scanners may scrutinize it. It is not packed or obfuscated,
+and source code is available for inspection. Changing the PE header invalidates
+any existing digital signature on Dead Space.exe; Restore or Repair/Verify puts
+the exact store copy back.
+
+The separate Source Code archive is for inspection only and is not required to
+install or use the mod.
+
+[b]Release status[/b]
+
+Version 1.1.0 passed the full synthetic integration suite and worked
+successfully through a normal retail game launch. Store-specific behavior can
+still vary between EA App and Steam, so please report any unexpected launch
+behavior.
