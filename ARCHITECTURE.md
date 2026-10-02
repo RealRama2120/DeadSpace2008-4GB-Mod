@@ -68,5 +68,5 @@ executable. Restoring the verified backup returns the exact original bytes.
 ## Verification boundary
 
 The synthetic suite verifies the proxy, handoff, patch, failure containment,
-relaunch, and restore paths. Version 1.1.2 worked through normal EA App and
-Steam launches after the same existing synthetic and regression checks.
+relaunch, and restore paths. Version 1.1.2 worked through normal EA App and Steam launches after the same existing synthetic and regression checks. The release was additionally validated by my full manual playthrough of the entire game with all my Dead Space (2008) mods installed together.
+
