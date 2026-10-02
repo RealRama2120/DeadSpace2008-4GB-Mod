@@ -42,13 +42,13 @@ Normal Steam first-launch patch/relaunch and later launches reached the menu.
 A live startup probe successfully reserved an address above 2 GB.
 The existing patch/restore/launcher suite and targeted file-hook tests passed.
 The candidate's Restore function recovered the exact original Steam executable.
-The final pair launched through EA and Steam together. The user completed a
-short Steam gameplay check with normal movement, sound, and subtitles. The EA
+The final pair launched through EA and Steam together. I completed a full playthrough of the game on Steam with this mod installed, with normal movement, sound, and subtitles throughout.
+The EA
 executable and save remained unchanged; the EA combined launch completed its
 automatic patch/relaunch and reached the main menu. ReShade and other proxy
 combinations remain configuration-dependent.
 
 LICENSES
-The mod's license is LICENSE.txt. This candidate statically links MinHook 1.3.4;
+The mod's license is LICENSE.txt. This release statically links MinHook 1.3.4;
 its full license, including its disassembler notices, is MINHOOK_LICENSE.txt.
 See THIRD_PARTY_NOTICES.txt for the source URL.
