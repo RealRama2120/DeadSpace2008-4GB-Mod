@@ -1,18 +1,45 @@
 # Dead Space (2008) 4GB Mod
 
-Source and release archive for Rama2120's standalone Large Address Aware mod for the original Dead Space (2008). This repository is separate from the Vortex extension and other Dead Space mods.
+![Version](https://img.shields.io/badge/version-1.1.2-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
+![Game](https://img.shields.io/badge/game-Dead%20Space%20(2008)-c41e1f)
 
-The newest locally preserved version is **1.1.2**. The source files at the repository root are the verified 1.1.2 source snapshot. The original release ZIPs are preserved byte for byte under [`versions/`](versions/README.md). The repository does not contain a copy of `Dead Space.exe` or NTCore's patcher.
+**A standalone Large Address Aware mod for the original Dead Space (2008) on PC.**
+Dead Space (2008) is a 32-bit game limited to 2 GB of memory, which can cause
+crashes with high-resolution textures and long sessions. This mod applies the
+4GB patch through a lightweight `dsound.dll` proxy that forwards all
+DirectSound exports untouched — no game files modified, no patcher to run.
 
-## Build
+## What it does
 
-On Windows 10 or 11 with the Visual Studio 2022 C++ x86 build tools and PowerShell, run:
+- Enables the Large Address Aware flag so `Dead Space.exe` can use up to 4 GB
+  of virtual memory on 64-bit Windows.
+- Ships as an unsigned, uncompressed, unobfuscated 32-bit `dsound.dll` proxy
+  that forwards every DirectSound export to the real system DLL.
+- Includes `Restore.cmd` to revert cleanly.
+
+## Install
+
+1. Copy `dsound.dll` from the release ZIP beside `Dead Space.exe`.
+2. Launch the game normally.
+3. To uninstall, run `Restore.cmd` or remove the mod's `dsound.dll`.
+
+See `README.txt` for the full player installation guide.
+
+## Build from source
+
+On Windows 10 or 11 with the Visual Studio 2022 C++ x86 build tools and
+PowerShell, run:
 
 ```powershell
 .\build-and-test.ps1
 ```
 
-This builds `build\dsound.dll` and runs the source's synthetic patch, restore, and Steam compatibility checks. [`SOURCE_README.md`](SOURCE_README.md) describes the source package and test coverage. `README.txt` is the original 1.1.2 player installation guide. The root files match the local 1.1.2 source checksum manifest; the `vendor/minhook-1.3.4` directory retains MinHook's redistribution license.
+This builds `build\dsound.dll` and runs the synthetic patch, restore, and
+Steam compatibility checks. [`SOURCE_README.md`](SOURCE_README.md) describes
+the source package and test coverage. The root files match the 1.1.2 source
+checksum manifest.
 
 ## Preserved versions
 
@@ -22,8 +49,19 @@ This builds `build\dsound.dll` and runs the source's synthetic patch, restore, a
 | 1.1.1 | Yes | No separate source archive found locally | No original checksum file found; a clearly marked checksum was generated for this backup |
 | 1.1.2 | Yes | Yes | Two original `.sha256` sidecars |
 
-The 1.1.1 ZIP contains the same `dsound.dll` bytes as 1.1.0; its package removes developer-facing files and updates the player documentation. That does not make the 1.1.0 source ZIP a separately archived 1.1.1 source snapshot. No historical Git tags have been fabricated.
+The 1.1.1 ZIP contains the same `dsound.dll` bytes as 1.1.0; its package
+removes developer-facing files and updates the player documentation. The
+original release archives and checksum records remain unchanged.
+[`versions/README.md`](versions/README.md) describes each archived file and
+the gaps. No historical Git tags have been fabricated.
 
-The original release archives and checksum records remain unchanged. `versions/README.md` describes each archived file and the gaps. The separate September 8 Steam diagnostic candidate is private test material and is not part of the version archive.
+This repository does not contain a copy of `Dead Space.exe` or NTCore's
+patcher.
 
-Copyright (c) 2026 Rama2120. The mod's source is under the MIT License in [`LICENSE.txt`](LICENSE.txt). Bundled MinHook source has its own license in [`vendor/minhook-1.3.4/LICENSE.txt`](vendor/minhook-1.3.4/LICENSE.txt).
+## Credits and licensing
+
+Created by Rama2120.
+
+The mod's source is under the MIT License in [`LICENSE.txt`](LICENSE.txt).
+Bundled MinHook source has its own license in
+[`vendor/minhook-1.3.4/LICENSE.txt`](vendor/minhook-1.3.4/LICENSE.txt).
