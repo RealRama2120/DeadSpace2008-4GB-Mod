@@ -25,7 +25,7 @@ relaunch context, proxy exports, and version metadata. The release DLL is
 written to `build\dsound.dll`.
 
 Version 1.1.2 passed the full existing suite, the targeted Steam file-validation
-tests, and normal first/repeat launches through both Steam and EA App. I (Rama2120) manually test every release. I have played through the entire game with recent versions of all my Dead Space (2008) mods installed together, including the 4GB mod, with no issues.
+tests, and normal first/repeat launches through both Steam and EA App. I (Rama2120) manually test every release. I have played through the entire game with recent versions of all my Dead Space (2008) mods installed together, including the 4GB mod, with no issues. It is also tested working on the Steam release.
 ReShade and other proxy combinations
 remain configuration-dependent.
 
