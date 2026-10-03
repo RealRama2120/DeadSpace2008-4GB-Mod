@@ -24,7 +24,7 @@ written beside it), then the game restarts itself once.
   of virtual memory on 64-bit Windows.
 - Ships as an unsigned, uncompressed, unobfuscated 32-bit `dsound.dll` proxy
   that forwards every DirectSound export to the real system DLL.
-- Includes `Restore.cmd` to revert cleanly.
+- Includes `Restore Dead Space 4GB Mod.cmd` to revert cleanly.
 
 ## Install
 
@@ -33,8 +33,8 @@ written beside it), then the game restarts itself once.
    reopens itself once while the patch is applied; later launches need no
    restart.
 3. To uninstall: with the game closed and `dsound.dll` still in place, run
-   `Restore.cmd` and wait for its verified SUCCESS message — this restores the
-   original executable. Only then remove the mod's `dsound.dll`. Removing the
+   `Restore Dead Space 4GB Mod.cmd` and wait for its verified SUCCESS message — this restores the
+   original executable. Only then remove the mod's `dsound.dll`. The bundled `README.txt`, `LICENSE.txt`, `MINHOOK_LICENSE.txt`, and `THIRD_PARTY_NOTICES.txt` can be deleted as well. Removing the
    DLL first while leaving the executable patched can bring back the Steam
    application load error; Steam's Verify Integrity can restore the store
    executable if that happens.
