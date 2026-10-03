@@ -13,7 +13,10 @@
 Dead Space (2008) is a 32-bit game limited to 2 GB of memory, which can cause
 crashes with high-resolution textures and long sessions. This mod applies the
 4GB patch through a lightweight `dsound.dll` proxy that forwards all
-DirectSound exports untouched — no game files modified, no patcher to run.
+DirectSound exports untouched — no patcher to run. On the first launch with an
+unpatched executable, the proxy flips the Large Address Aware bit in
+`Dead Space.exe` itself (one bit; a SHA-256-verified backup and manifest are
+written beside it), then the game restarts itself once.
 
 ## What it does
 
@@ -26,8 +29,15 @@ DirectSound exports untouched — no game files modified, no patcher to run.
 ## Install
 
 1. Copy `dsound.dll` from the release ZIP beside `Dead Space.exe`.
-2. Launch the game normally.
-3. To uninstall, run `Restore.cmd` or remove the mod's `dsound.dll`.
+2. Launch the game normally. On an unpatched executable the game closes and
+   reopens itself once while the patch is applied; later launches need no
+   restart.
+3. To uninstall: with the game closed and `dsound.dll` still in place, run
+   `Restore.cmd` and wait for its verified SUCCESS message — this restores the
+   original executable. Only then remove the mod's `dsound.dll`. Removing the
+   DLL first while leaving the executable patched can bring back the Steam
+   application load error; Steam's Verify Integrity can restore the store
+   executable if that happens.
 
 See `README.txt` for the full player installation guide.
 
