@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/social-preview.png" width="480" alt="Dead 4GB Mod">
+</p>
+
 # Dead Space (2008) 4GB Mod
 
 ![Version](https://img.shields.io/badge/version-1.1.2-blue)
